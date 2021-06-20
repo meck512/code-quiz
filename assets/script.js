@@ -85,35 +85,15 @@ function quiz(qIndex) {
         var spawnMultChoice = questions[qIndex].multChoice;
         qDiv.textContent = spawnQuestion;
     }
-
-}
-
-
-
-
-
-// *******************CURRENT BUG - cannot get new li elements to appear on page**********
-function spawnToPage(qIndex) {
-    // Clears existing data in HTML
-    qDiv.innerHTML = "";
-    ulCreate.innerHTML = "";
-    // Loop through array
-    for (var i = 0; i < questions.length; i++) {
-        // Append question
-        var spawnQuestion = questions[qIndex].question;
-        var spawnMultChoice = questions[qIndex].multChoice;
-        qDiv.textContent = spawnQuestion;
+        // New li's for multChoice 
+        spawnMultChoice.forEach(function (newLi) {
+            var listItem = document.createElement("li");
+            listItem.textContent = newLi;
+            qDiv.appendChild(ulCreate);
+            ulCreate.appendChild(listItem);
+            listItem.addEventListener("click", (check));
+        })
     }
-    // New li's for multChoice 
-    spawnMultChoice.forEach(function (newLi) {
-        var listItem = document.createElement("li");
-        listItem.textContent = newLi;
-        qDiv.appendChild(ulCreate);
-        ulCreate.appendChild(listItem);
-        listItem.addEventListener("click", (check));
-    })
-}
-
 
 
 
@@ -127,7 +107,7 @@ function check(choice) {
     if (userSubmit.matches("li")) {
         var feedback = document.createElement("div");
         feedback.setAttribute("id", "feedback");
-       
+
         if (userSubmit.textContent == questions[qIndex].answer) {
             score++;
             // ^how much is added to the score?
