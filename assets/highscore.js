@@ -26,3 +26,4 @@ if (allHighscores !== null) {
 
     }
 }
+

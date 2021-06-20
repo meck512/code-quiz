@@ -44,7 +44,7 @@ function countdown() {
             timeLeft--;
         } else if (timeLeft === 1) {
             // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-            timerEl.textContent = timeLeft + ' second';
+            timerEl.textContent = timeLeft;
             timeLeft--;
         } else {
             // Once `timeLeft` gets to 0, set `timerEl` to an empty string
@@ -153,11 +153,11 @@ function gameOver() {
     qDiv.appendChild(inputI);
 
     // Submit Button
-      var submitBtn = document.createElement("button");
-      submitBtn.setAttribute("type", "submit");
-      submitBtn.setAttribute("id", "submit");
-      submitBtn.textContent = "Submit";
-      qDiv.appendChild(submitBtn);
+    var submitBtn = document.createElement("button");
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.setAttribute("id", "submit");
+    submitBtn.textContent = "Submit";
+    qDiv.appendChild(submitBtn);
 
     // High Score Page Feeder
     submitBtn.addEventListener("click", function () {
@@ -181,10 +181,12 @@ function gameOver() {
             allHighscores.push(scoreFinal);
             var newScore = JSON.stringify(allHighscores);
             localStorage.setItem("allHighscores", newScore);
-        
+
             window.location.replace("./highScore.html");
         }
     });
 }
 
 startTimer.onclick = countdown;
+
+
