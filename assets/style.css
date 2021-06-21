@@ -1,9 +1,10 @@
 * {
     font-family: Courier New, monospace;
-    background-color: darkgray;
+    background-color: #ffff;
     color:purple;
     margin: 5%;
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -38,7 +39,9 @@
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
+        padding: 10px;
   }
+
 
   h2 {
       text-align: right;
@@ -46,8 +49,19 @@
 
   li {
       list-style: none;
+      background-color: purple;
+      color: black;
+      padding: 10px;
+      width: auto;
+      border-radius: 30px;
+      border-style: solid;
   }
-
+  li.pointer {
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: #ccc;
+  }
   container {
       justify-content: space-around;
   }

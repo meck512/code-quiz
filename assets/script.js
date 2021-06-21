@@ -161,7 +161,7 @@ function gameOver() {
 
     // High Score Page Feeder
     submitBtn.addEventListener("click", function () {
-        var initials = newP3.value;
+        var initials = inputI.value;
 
         if (initials === null) {
             alert("Please enter valid initials!");
