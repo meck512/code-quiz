@@ -39,7 +39,7 @@ function countdown() {
         // As long as the `timeLeft` is greater than 1
         if (timeLeft > 1) {
             // Set the `textContent` of `timerEl` to show the remaining seconds
-            timerEl.textContent = timeLeft + ' seconds';
+            timerEl.textContent = timeLeft;
             // Decrement `timeLeft` by 1
             timeLeft--;
         } else if (timeLeft === 1) {
@@ -164,7 +164,7 @@ function gameOver() {
         var initials = newP3.value;
 
         if (initials === null) {
-            console.log("Please enter valid initials!");
+            alert("Please enter valid initials!");
 
         } else {
             var scoreFinal = {
